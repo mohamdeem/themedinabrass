@@ -1,179 +1,261 @@
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Medina Brass | Solid Unlacquered Brass Fixtures &amp; Hardware</title>
+<meta name="description" content="Hand-finished, solid unlacquered brass faucets and cabinet hardware for custom home builders and interior designers across the United States.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  .mb-wrap {
-    --mb-bg: #111111;
-    --mb-card: #171717;
-    --mb-gold: #D4AF37;
-    --mb-text: #EDE8DC;
-    --mb-muted: #9A9488;
-    --mb-line: rgba(212, 175, 55, 0.22);
-    background: var(--mb-bg);
-    color: var(--mb-text);
-    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 300;
-    line-height: 1.6;
-    padding: clamp(48px, 8vw, 110px) clamp(20px, 5vw, 64px);
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .mb-wrap *, .mb-wrap *::before, .mb-wrap *::after { box-sizing: border-box; }
+:root{
+  --bg:#0d0d0d; --panel:#151515; --gold:#d4af37; --white:#fff;
+  --text:#e9e6df; --muted:#9b968b; --line:rgba(212,175,55,.25);
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:300;color:var(--white);margin:0;line-height:1.1}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+section{padding:clamp(64px,10vw,140px) 0}
 
-  .mb-header { text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 7vw, 80px); }
-  .mb-eyebrow {
-    font-size: 11px; letter-spacing: 0.38em; text-transform: uppercase;
-    color: var(--mb-gold); margin: 0 0 22px;
-  }
-  .mb-title {
-    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-    font-weight: 500; font-size: clamp(34px, 6vw, 62px);
-    line-height: 1.1; margin: 0 0 22px; letter-spacing: 0.01em; color: #fff;
-  }
-  .mb-rule { width: 56px; height: 1px; background: var(--mb-gold); margin: 0 auto 24px; border: 0; }
-  .mb-sub { font-size: clamp(14px, 1.6vw, 16px); color: var(--mb-muted); margin: 0 auto; max-width: 560px; }
+/* Buttons */
+.btn{display:inline-block;text-decoration:none;font-size:15px;font-weight:500;letter-spacing:.04em;padding:15px 30px;border:1px solid var(--gold);transition:background .25s,color .25s;text-align:center}
+.btn-solid{background:var(--gold);color:#0d0d0d}
+.btn-solid:hover{background:transparent;color:var(--gold)}
+.btn-line{color:var(--gold)}
+.btn-line:hover{background:var(--gold);color:#0d0d0d}
 
-  .mb-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(20px, 3vw, 40px);
-    max-width: 1200px; margin: 0 auto;
-  }
+/* Nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+.logo{font-family:var(--serif);font-size:24px;color:var(--white);text-decoration:none;letter-spacing:.02em}
+.nav a.link{font-size:14px;color:var(--muted);text-decoration:none;margin-left:28px}
+.nav a.link:hover{color:var(--gold)}
 
-  .mb-card {
-    background: var(--mb-card);
-    border: 1px solid var(--mb-line);
-    display: flex; flex-direction: column;
-    transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
-  }
-  .mb-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(212, 175, 55, 0.6);
-    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
-  }
+/* Hero */
+.hero{padding:clamp(48px,7vw,100px) 0 clamp(64px,9vw,120px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,96px);align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,88px);letter-spacing:-.01em;margin-bottom:28px}
+.hero p{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:30em;margin:0 0 40px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.arch{border-radius:999px 999px 0 0;overflow:hidden;border:1px solid var(--line);padding:10px;aspect-ratio:3/4.1}
+.arch img{width:100%;height:100%;object-fit:cover;border-radius:999px 999px 0 0}
+.brandline{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:20px;margin:0 0 22px}
 
-  /* Placeholder image area: replace with <img> later (see notes) */
-  .mb-img {
-    aspect-ratio: 4 / 5; width: 100%;
-    background:
-      radial-gradient(circle at 50% 38%, rgba(212,175,55,0.20), transparent 62%),
-      linear-gradient(160deg, #1e1c18, #121212);
-    border-bottom: 1px solid var(--mb-line);
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(212,175,55,0.5); font-size: 11px;
-    letter-spacing: 0.3em; text-transform: uppercase;
-    overflow: hidden;
-  }
-  .mb-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Section heading */
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,64px)}
+.sec-head h2{font-size:clamp(32px,4.6vw,56px)}
+.sec-head p{margin:0;color:var(--muted);max-width:28em}
 
-  .mb-body { padding: clamp(22px, 3vw, 34px); display: flex; flex-direction: column; flex: 1; }
-  .mb-tag { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mb-gold); margin: 0 0 12px; }
-  .mb-name {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-weight: 500; font-size: clamp(24px, 2.4vw, 30px);
-    margin: 0 0 12px; color: #fff; line-height: 1.2;
-  }
-  .mb-desc { font-size: 14px; color: var(--mb-muted); margin: 0 0 24px; flex: 1; }
-  .mb-price {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 26px; color: var(--mb-gold); margin: 0 0 22px; letter-spacing: 0.02em;
-  }
-  .mb-price small { font-family: "Inter", Arial, sans-serif; font-size: 11px; color: var(--mb-muted); letter-spacing: 0.08em; margin-left: 6px; }
+/* Categories */
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
+.cat{background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
+.cat-img{aspect-ratio:16/11;overflow:hidden;background:linear-gradient(160deg,#211f1a,#121212)}
+.cat-img img{width:100%;height:100%;object-fit:cover}
+.cat-body{padding:clamp(24px,3.4vw,44px);display:flex;flex-direction:column;flex:1}
+.cat h3{font-size:clamp(28px,3vw,38px);margin-bottom:14px}
+.cat p{color:var(--muted);margin:0 0 22px;flex:1}
+.range{color:var(--gold);font-family:var(--serif);font-size:22px;margin-bottom:26px}
+.cat .btn{align-self:flex-start}
 
-  .mb-btn {
-    display: block; text-align: center; text-decoration: none;
-    padding: 15px 20px; font-size: 11px; font-weight: 500;
-    letter-spacing: 0.26em; text-transform: uppercase;
-    transition: all .3s ease; cursor: pointer;
-  }
-  .mb-btn-primary { background: var(--mb-gold); color: #111; border: 1px solid var(--mb-gold); }
-  .mb-btn-primary:hover { background: transparent; color: var(--mb-gold); }
-  .mb-btn-ghost { margin-top: 10px; background: transparent; color: var(--mb-text); border: 1px solid rgba(237,232,220,0.25); }
-  .mb-btn-ghost:hover { border-color: var(--mb-gold); color: var(--mb-gold); }
+/* Placeholder */
+.ph{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:rgba(212,175,55,.55);font-family:var(--serif);font-style:italic;font-size:18px;background:radial-gradient(circle at 50% 40%,rgba(212,175,55,.16),transparent 62%),linear-gradient(160deg,#211f1a,#121212)}
 
-  .mb-footer {
-    max-width: 1200px; margin: clamp(48px, 7vw, 90px) auto 0;
-    padding-top: 36px; border-top: 1px solid var(--mb-line);
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; text-align: center;
-  }
-  .mb-feat h4 {
-    font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500;
-    font-size: 20px; color: var(--mb-gold); margin: 0 0 6px;
-  }
-  .mb-feat p { font-size: 13px; color: var(--mb-muted); margin: 0; }
+/* Products */
+.products{background:#101010;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,28px)}
+.card{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line)}
+.card-img{aspect-ratio:1/1;overflow:hidden;border-bottom:1px solid var(--line)}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:25px;margin-bottom:6px}
+.kind{font-size:13px;color:var(--gold);margin:0 0 14px}
+.card .desc{font-size:14.5px;color:var(--muted);margin:0 0 22px;flex:1}
+.price{font-family:var(--serif);font-size:28px;color:var(--white);margin:0 0 18px}
+.price span{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:6px}
+.card .btn{width:100%}
 
-  @media (max-width: 960px) {
-    .mb-grid { grid-template-columns: repeat(2, 1fr); }
-    .mb-footer { grid-template-columns: 1fr; gap: 24px; }
-  }
-  @media (max-width: 620px) {
-    .mb-grid { grid-template-columns: 1fr; max-width: 440px; }
-    .mb-img { aspect-ratio: 1 / 1; }
-  }
+/* Trust */
+.trust-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.trust-img{aspect-ratio:1/1;overflow:hidden;border:1px solid var(--line);padding:10px}
+.trust-img img{width:100%;height:100%;object-fit:cover}
+.pillars{display:grid;gap:0}
+.pillar{padding:28px 0;border-top:1px solid var(--line)}
+.pillar:last-child{border-bottom:1px solid var(--line)}
+.pillar h3{font-size:28px;color:var(--gold);margin-bottom:8px}
+.pillar p{margin:0;color:var(--muted);max-width:32em}
+.trust h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:36px}
+
+/* Footer */
+footer{padding:48px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:14px}
+footer .logo{display:block;margin-bottom:10px}
+
+@media (max-width:1060px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:820px){
+  .hero-grid,.trust-grid,.cats{grid-template-columns:1fr}
+  .arch{max-width:420px;width:100%;margin:0 auto}
+  .trust-img{max-width:520px}
+  .nav a.link{display:none}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1 1 100%}
+  .cat .btn{align-self:stretch}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
+</head>
+<body>
 
-<section class="mb-wrap">
-  <header class="mb-header">
-    <p class="mb-eyebrow">The Medina Brass</p>
-    <h1 class="mb-title">Solid Brass Hardware,<br>Made to Age Beautifully</h1>
-    <hr class="mb-rule">
-    <p class="mb-sub">Hand-finished, solid unlacquered living brass pulls and knobs for custom home builders and interior designers across the United States.</p>
-  </header>
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top">The Medina Brass</a>
+    <div>
+      <a class="link" href="#categories">Collections</a>
+      <a class="link" href="#featured">Featured</a>
+      <a class="link" href="#trade">Trade program</a>
+    </div>
+  </nav>
+</div>
 
-  <div class="mb-grid">
-
-    <!-- PRODUCT 1 -->
-    <article class="mb-card">
-      <div class="mb-img">
-        <!-- Replace this text with: <img src="YOUR_IMAGE_URL" alt="Heavy Brass Pull"> -->
-        Product Photo
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="brandline">The Medina Brass</p>
+      <h1>Solid Brass Hardware &amp; Faucets, Made to Age Beautifully</h1>
+      <p>Hand-finished, solid unlacquered brass fixtures crafted for custom home builders and interior designers across the United States.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#featured">Shop featured pieces</a>
+        <a class="btn btn-line" href="#trade">Request trade pricing</a>
       </div>
-      <div class="mb-body">
-        <p class="mb-tag">Solid Unlacquered Living Brass</p>
-        <h2 class="mb-name">Heavy Brass Pull</h2>
-        <p class="mb-desc">Substantial, hand-finished pull cast from solid unlacquered brass. Develops a rich, one-of-a-kind patina over time. Ideal for cabinetry, vanities, and statement doors.</p>
-        <p class="mb-price">$48<small>USD / EACH</small></p>
-        <a class="mb-btn mb-btn-primary" href="PASTE_STRIPE_LINK_HERE" target="_blank" rel="noopener">Buy Now</a>
-        <a class="mb-btn mb-btn-ghost" href="PASTE_STRIPE_SAMPLE_LINK_HERE" target="_blank" rel="noopener">Order Trade Sample</a>
-      </div>
-    </article>
-
-    <!-- PRODUCT 2 -->
-    <article class="mb-card">
-      <div class="mb-img">
-        <!-- Replace this text with: <img src="YOUR_IMAGE_URL" alt="Cabinet Knob"> -->
-        Product Photo
-      </div>
-      <div class="mb-body">
-        <p class="mb-tag">Solid Unlacquered Living Brass</p>
-        <h2 class="mb-name">Cabinet Knob</h2>
-        <p class="mb-desc">A refined, weighty knob in solid unlacquered brass. Understated profile with a warm, tactile finish that deepens naturally with every touch.</p>
-        <p class="mb-price">$28<small>USD / EACH</small></p>
-        <a class="mb-btn mb-btn-primary" href="PASTE_STRIPE_LINK_HERE" target="_blank" rel="noopener">Buy Now</a>
-        <a class="mb-btn mb-btn-ghost" href="PASTE_STRIPE_SAMPLE_LINK_HERE" target="_blank" rel="noopener">Order Trade Sample</a>
-      </div>
-    </article>
-
-    <!-- PRODUCT 3 -->
-    <article class="mb-card">
-      <div class="mb-img">
-        <!-- Replace this text with: <img src="YOUR_IMAGE_URL" alt="T-Bar Handle"> -->
-        Product Photo
-      </div>
-      <div class="mb-body">
-        <p class="mb-tag">Solid Unlacquered Living Brass</p>
-        <h2 class="mb-name">T-Bar Handle</h2>
-        <p class="mb-desc">Clean, architectural T-bar crafted from solid unlacquered living brass. Precision-machined and hand-polished for kitchens and built-ins with modern lines.</p>
-        <p class="mb-price">$62<small>USD / EACH</small></p>
-        <a class="mb-btn mb-btn-primary" href="PASTE_STRIPE_LINK_HERE" target="_blank" rel="noopener">Buy Now</a>
-        <a class="mb-btn mb-btn-ghost" href="PASTE_STRIPE_SAMPLE_LINK_HERE" target="_blank" rel="noopener">Order Trade Sample</a>
-      </div>
-    </article>
-
+    </div>
+    <div class="arch">
+      <img src="images/faucet-hero.jpeg" alt="Unlacquered brass bridge faucet with side spray on a marble counter" fetchpriority="high">
+    </div>
   </div>
+</header>
 
-  <footer class="mb-footer">
-    <div class="mb-feat"><h4>Living Finish</h4><p>Unlacquered brass that patinates uniquely over time.</p></div>
-    <div class="mb-feat"><h4>Trade Program</h4><p>Samples and pricing for builders and designers.</p></div>
-    <div class="mb-feat"><h4>Shipped to the US</h4><p>Carefully packed and tracked to your jobsite.</p></div>
-  </footer>
+<section id="categories">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Two collections, one finish</h2>
+      <p>Every piece is solid brass, left unlacquered so it develops its own patina.</p>
+    </div>
+    <div class="cats">
+      <article class="cat">
+        <div class="cat-img"><img src="images/faucet-category.jpeg" alt="Unlacquered brass bridge faucet at a kitchen window" loading="lazy"></div>
+        <div class="cat-body">
+          <h3>Architectural Faucets</h3>
+          <p>Bridge faucets in a living unlacquered finish, with custom handles left free of hot and cold engravings for a cleaner, more timeless look.</p>
+          <div class="range">$480 – $620</div>
+          <a class="btn btn-solid" href="#featured">Explore faucets</a>
+        </div>
+      </article>
+      <article class="cat">
+        <div class="cat-img"><div class="ph">Hardware photo</div><!-- Replace the line above with: <img src="images/hardware.jpg" alt="Solid brass cabinet pulls and knobs" loading="lazy"> --></div>
+        <div class="cat-body">
+          <h3>Cabinet &amp; Door Hardware</h3>
+          <p>Solid brass pulls, knobs, and T-bar handles, cast heavy and hand-finished to be touched every day.</p>
+          <div class="range">$28 – $62</div>
+          <a class="btn btn-solid" href="#featured">Explore hardware</a>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
+
+<section class="products" id="featured">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Featured pieces</h2>
+      <p>A curated selection from both collections. Trade samples available on request.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-img"><div class="ph">Product photo</div><!-- <img src="images/heavy-brass-pull.jpg" alt="Heavy Brass Pull" loading="lazy"> --></div>
+        <div class="card-body">
+          <h3>Heavy Brass Pull</h3>
+          <p class="kind">Cabinet &amp; Door Hardware</p>
+          <p class="desc">A substantial pull cast from solid unlacquered brass. Its surface deepens with every touch, so no two ever look alike.</p>
+          <p class="price">$48<span>USD</span></p>
+          <a class="btn btn-solid" href="#" target="_blank" rel="noopener">Buy now</a><!-- Paste Stripe payment link in href -->
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img"><div class="ph">Product photo</div><!-- <img src="images/cabinet-knob.jpg" alt="Cabinet Knob" loading="lazy"> --></div>
+        <div class="card-body">
+          <h3>Cabinet Knob</h3>
+          <p class="kind">Cabinet &amp; Door Hardware</p>
+          <p class="desc">A weighty, understated knob in solid unlacquered brass, hand-finished with a warm tactile surface.</p>
+          <p class="price">$28<span>USD</span></p>
+          <a class="btn btn-solid" href="#" target="_blank" rel="noopener">Buy now</a><!-- Paste Stripe payment link in href -->
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img"><div class="ph">Product photo</div><!-- <img src="images/t-bar-handle.jpg" alt="T-Bar Handle" loading="lazy"> --></div>
+        <div class="card-body">
+          <h3>T-Bar Handle</h3>
+          <p class="kind">Cabinet &amp; Door Hardware</p>
+          <p class="desc">A clean architectural T-bar in solid unlacquered brass, precision-machined and hand-polished for modern kitchens and built-ins.</p>
+          <p class="price">$62<span>USD</span></p>
+          <a class="btn btn-solid" href="#" target="_blank" rel="noopener">Buy now</a><!-- Paste Stripe payment link in href -->
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img"><img src="images/faucet-bridge.webp" alt="Unlacquered brass bridge faucet with cross handles and side spray" loading="lazy"></div>
+        <div class="card-body">
+          <h3>Luxury Bridge Faucet</h3>
+          <p class="kind">Architectural Faucets</p>
+          <p class="desc">A solid unlacquered brass bridge faucet in a living finish, with custom handles and no hot or cold engravings.</p>
+          <p class="price">$580<span>USD</span></p>
+          <a class="btn btn-solid" href="#" target="_blank" rel="noopener">Buy now</a><!-- Paste Stripe payment link in href -->
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="trust" id="trade">
+  <div class="wrap trust-grid">
+    <div class="trust-img"><img src="images/faucet-patina.webp" alt="Unlacquered brass faucet showing a soft, natural patina" loading="lazy"></div>
+    <div>
+      <h2>Built for the trade</h2>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Living finish</h3>
+          <p>Unlacquered brass develops a unique patina over time, shaped by the home and the people in it.</p>
+        </div>
+        <div class="pillar">
+          <h3>Trade program</h3>
+          <p>Samples and trade pricing for custom home builders and interior designers.</p>
+        </div>
+        <div class="pillar">
+          <h3>Fast US shipping</h3>
+          <p>Securely packed and tracked all the way to your jobsite.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top">The Medina Brass</a>
+    Solid unlacquered brass, made to age beautifully.
+  </div>
+</footer>
+
+</body>
+</html>
