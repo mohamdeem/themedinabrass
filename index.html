@@ -1,0 +1,179 @@
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  .mb-wrap {
+    --mb-bg: #111111;
+    --mb-card: #171717;
+    --mb-gold: #D4AF37;
+    --mb-text: #EDE8DC;
+    --mb-muted: #9A9488;
+    --mb-line: rgba(212, 175, 55, 0.22);
+    background: var(--mb-bg);
+    color: var(--mb-text);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    padding: clamp(48px, 8vw, 110px) clamp(20px, 5vw, 64px);
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .mb-wrap *, .mb-wrap *::before, .mb-wrap *::after { box-sizing: border-box; }
+
+  .mb-header { text-align: center; max-width: 720px; margin: 0 auto clamp(40px, 7vw, 80px); }
+  .mb-eyebrow {
+    font-size: 11px; letter-spacing: 0.38em; text-transform: uppercase;
+    color: var(--mb-gold); margin: 0 0 22px;
+  }
+  .mb-title {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-weight: 500; font-size: clamp(34px, 6vw, 62px);
+    line-height: 1.1; margin: 0 0 22px; letter-spacing: 0.01em; color: #fff;
+  }
+  .mb-rule { width: 56px; height: 1px; background: var(--mb-gold); margin: 0 auto 24px; border: 0; }
+  .mb-sub { font-size: clamp(14px, 1.6vw, 16px); color: var(--mb-muted); margin: 0 auto; max-width: 560px; }
+
+  .mb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 40px);
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .mb-card {
+    background: var(--mb-card);
+    border: 1px solid var(--mb-line);
+    display: flex; flex-direction: column;
+    transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+  }
+  .mb-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Placeholder image area: replace with <img> later (see notes) */
+  .mb-img {
+    aspect-ratio: 4 / 5; width: 100%;
+    background:
+      radial-gradient(circle at 50% 38%, rgba(212,175,55,0.20), transparent 62%),
+      linear-gradient(160deg, #1e1c18, #121212);
+    border-bottom: 1px solid var(--mb-line);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(212,175,55,0.5); font-size: 11px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    overflow: hidden;
+  }
+  .mb-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .mb-body { padding: clamp(22px, 3vw, 34px); display: flex; flex-direction: column; flex: 1; }
+  .mb-tag { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mb-gold); margin: 0 0 12px; }
+  .mb-name {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500; font-size: clamp(24px, 2.4vw, 30px);
+    margin: 0 0 12px; color: #fff; line-height: 1.2;
+  }
+  .mb-desc { font-size: 14px; color: var(--mb-muted); margin: 0 0 24px; flex: 1; }
+  .mb-price {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 26px; color: var(--mb-gold); margin: 0 0 22px; letter-spacing: 0.02em;
+  }
+  .mb-price small { font-family: "Inter", Arial, sans-serif; font-size: 11px; color: var(--mb-muted); letter-spacing: 0.08em; margin-left: 6px; }
+
+  .mb-btn {
+    display: block; text-align: center; text-decoration: none;
+    padding: 15px 20px; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.26em; text-transform: uppercase;
+    transition: all .3s ease; cursor: pointer;
+  }
+  .mb-btn-primary { background: var(--mb-gold); color: #111; border: 1px solid var(--mb-gold); }
+  .mb-btn-primary:hover { background: transparent; color: var(--mb-gold); }
+  .mb-btn-ghost { margin-top: 10px; background: transparent; color: var(--mb-text); border: 1px solid rgba(237,232,220,0.25); }
+  .mb-btn-ghost:hover { border-color: var(--mb-gold); color: var(--mb-gold); }
+
+  .mb-footer {
+    max-width: 1200px; margin: clamp(48px, 7vw, 90px) auto 0;
+    padding-top: 36px; border-top: 1px solid var(--mb-line);
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; text-align: center;
+  }
+  .mb-feat h4 {
+    font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500;
+    font-size: 20px; color: var(--mb-gold); margin: 0 0 6px;
+  }
+  .mb-feat p { font-size: 13px; color: var(--mb-muted); margin: 0; }
+
+  @media (max-width: 960px) {
+    .mb-grid { grid-template-columns: repeat(2, 1fr); }
+    .mb-footer { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 620px) {
+    .mb-grid { grid-template-columns: 1fr; max-width: 440px; }
+    .mb-img { aspect-ratio: 1 / 1; }
+  }
+</style>
+
+<section class="mb-wrap">
+  <header class="mb-header">
+    <p class="mb-eyebrow">The Medina Brass</p>
+    <h1 class="mb-title">Solid Brass Hardware,<br>Made to Age Beautifully</h1>
+    <hr class="mb-rule">
+    <p class="mb-sub">Hand-finished, solid unlacquered living brass pulls and knobs for custom home builders and interior designers across the United States.</p>
+  </header>
+
+  <div class="mb-grid">
+
+    <!-- PRODUCT 1 -->
+    <article class="mb-card">
+      <div class="mb-img">
+        <!-- Replace this text with: <img src="YOUR_IMAGE_URL" alt="Heavy Brass Pull"> -->
+        Product Photo
+      </div>
+      <div class="mb-body">
+        <p class="mb-tag">Solid Unlacquered Living Brass</p>
+        <h2 class="mb-name">Heavy Brass Pull</h2>
+        <p class="mb-desc">Substantial, hand-finished pull cast from solid unlacquered brass. Develops a rich, one-of-a-kind patina over time. Ideal for cabinetry, vanities, and statement doors.</p>
+        <p class="mb-price">$48<small>USD / EACH</small></p>
+        <a class="mb-btn mb-btn-primary" href="PASTE_STRIPE_LINK_HERE" target="_blank" rel="noopener">Buy Now</a>
+        <a class="mb-btn mb-btn-ghost" href="PASTE_STRIPE_SAMPLE_LINK_HERE" target="_blank" rel="noopener">Order Trade Sample</a>
+      </div>
+    </article>
+
+    <!-- PRODUCT 2 -->
+    <article class="mb-card">
+      <div class="mb-img">
+        <!-- Replace this text with: <img src="YOUR_IMAGE_URL" alt="Cabinet Knob"> -->
+        Product Photo
+      </div>
+      <div class="mb-body">
+        <p class="mb-tag">Solid Unlacquered Living Brass</p>
+        <h2 class="mb-name">Cabinet Knob</h2>
+        <p class="mb-desc">A refined, weighty knob in solid unlacquered brass. Understated profile with a warm, tactile finish that deepens naturally with every touch.</p>
+        <p class="mb-price">$28<small>USD / EACH</small></p>
+        <a class="mb-btn mb-btn-primary" href="PASTE_STRIPE_LINK_HERE" target="_blank" rel="noopener">Buy Now</a>
+        <a class="mb-btn mb-btn-ghost" href="PASTE_STRIPE_SAMPLE_LINK_HERE" target="_blank" rel="noopener">Order Trade Sample</a>
+      </div>
+    </article>
+
+    <!-- PRODUCT 3 -->
+    <article class="mb-card">
+      <div class="mb-img">
+        <!-- Replace this text with: <img src="YOUR_IMAGE_URL" alt="T-Bar Handle"> -->
+        Product Photo
+      </div>
+      <div class="mb-body">
+        <p class="mb-tag">Solid Unlacquered Living Brass</p>
+        <h2 class="mb-name">T-Bar Handle</h2>
+        <p class="mb-desc">Clean, architectural T-bar crafted from solid unlacquered living brass. Precision-machined and hand-polished for kitchens and built-ins with modern lines.</p>
+        <p class="mb-price">$62<small>USD / EACH</small></p>
+        <a class="mb-btn mb-btn-primary" href="PASTE_STRIPE_LINK_HERE" target="_blank" rel="noopener">Buy Now</a>
+        <a class="mb-btn mb-btn-ghost" href="PASTE_STRIPE_SAMPLE_LINK_HERE" target="_blank" rel="noopener">Order Trade Sample</a>
+      </div>
+    </article>
+
+  </div>
+
+  <footer class="mb-footer">
+    <div class="mb-feat"><h4>Living Finish</h4><p>Unlacquered brass that patinates uniquely over time.</p></div>
+    <div class="mb-feat"><h4>Trade Program</h4><p>Samples and pricing for builders and designers.</p></div>
+    <div class="mb-feat"><h4>Shipped to the US</h4><p>Carefully packed and tracked to your jobsite.</p></div>
+  </footer>
+</section>
